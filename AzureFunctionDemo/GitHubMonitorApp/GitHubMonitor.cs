@@ -24,13 +24,7 @@ namespace GitHubMonitorApp
 
             log.LogInformation(requestBody);
 
-            return new OkResult();
-
-            //string responseMessage = string.IsNullOrEmpty(name)
-            //    ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-            //    : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-            //return new OkObjectResult(responseMessage);
+            return new OkObjectResult(data);
         }
     }
 
@@ -224,25 +218,13 @@ namespace GitHubMonitorApp
         public string message { get; set; }
         public DateTime timestamp { get; set; }
         public string url { get; set; }
-        public Author1 author { get; set; }
-        public Committer1 committer { get; set; }
+        public Author author { get; set; }
+        public Committer committer { get; set; }
         public object[] added { get; set; }
         public object[] removed { get; set; }
         public string[] modified { get; set; }
     }
 
-    public class Author1
-    {
-        public string name { get; set; }
-        public string email { get; set; }
-        public string username { get; set; }
-    }
 
-    public class Committer1
-    {
-        public string name { get; set; }
-        public string email { get; set; }
-        public string username { get; set; }
-    }
 
 }
